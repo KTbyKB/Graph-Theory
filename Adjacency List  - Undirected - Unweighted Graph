@@ -1,0 +1,18 @@
+# Adjacency List  - Undirected - Unweighted Graph
+
+nv = int(input('Enter the number of the vertices :'))
+ne = int(input('Enter the number of the edges :'))
+
+edges = []
+for i in range(ne):
+    edge = tuple(map(int, input().split()))
+    edges.append(edge)
+
+adj_list ={v :[] for v in range(nv)}
+for v1, v2 in edges:
+    adj_list[v1].append(v2)
+    adj_list[v2].append(v1)
+
+print('Adjacency List')
+for k, v in adj_list.items():
+    print(k, ':', v)
